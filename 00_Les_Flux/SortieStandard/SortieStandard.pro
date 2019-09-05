@@ -4,4 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        bienvenue.cpp \
+        lecture.cpp \
+        lecturechainedecaracteres.cpp \
+        main.cpp \
+        manipulateurs.cpp \
+        manipulateursex.cpp \
+        medailles.cpp \
+        reference.cpp

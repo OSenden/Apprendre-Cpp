@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = SortieStandard1.0.0
-DISTDIR = /home/USERS/ELEVES/SNIR2018/nderouelle/ProjetQt/build-SortieStandard-Desktop_Qt_5_12_3_GCC_64bit-Debug/.tmp/SortieStandard1.0.0
+DISTDIR = /home/USERS/ELEVES/SNIR2018/osenden/Apprendre-Cpp/00_Les_Flux/build-SortieStandard-Desktop_Qt_5_12_3_GCC_64bit-Debug/.tmp/SortieStandard1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS)    
@@ -52,8 +52,22 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SortieStandard/main.cpp 
-OBJECTS       = main.o
+SOURCES       = ../SortieStandard/bienvenue.cpp \
+		../SortieStandard/lecture.cpp \
+		../SortieStandard/lecturechainedecaracteres.cpp \
+		../SortieStandard/main.cpp \
+		../SortieStandard/manipulateurs.cpp \
+		../SortieStandard/manipulateursex.cpp \
+		../SortieStandard/medailles.cpp \
+		../SortieStandard/reference.cpp 
+OBJECTS       = bienvenue.o \
+		lecture.o \
+		lecturechainedecaracteres.o \
+		main.o \
+		manipulateurs.o \
+		manipulateursex.o \
+		medailles.o \
+		reference.o
 DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/common/unix.conf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/common/linux.conf \
@@ -225,6 +239,7 @@ DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		../SortieStandard/.qmake.stash \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -238,7 +253,14 @@ DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/lex.prf \
-		../SortieStandard/SortieStandard.pro  ../SortieStandard/main.cpp
+		../SortieStandard/SortieStandard.pro  ../SortieStandard/bienvenue.cpp \
+		../SortieStandard/lecture.cpp \
+		../SortieStandard/lecturechainedecaracteres.cpp \
+		../SortieStandard/main.cpp \
+		../SortieStandard/manipulateurs.cpp \
+		../SortieStandard/manipulateursex.cpp \
+		../SortieStandard/medailles.cpp \
+		../SortieStandard/reference.cpp
 QMAKE_TARGET  = SortieStandard
 DESTDIR       = 
 TARGET        = SortieStandard
@@ -421,6 +443,7 @@ Makefile: ../SortieStandard/SortieStandard.pro /opt/Qt/5.12.3/gcc_64/mkspecs/lin
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -607,6 +630,7 @@ Makefile: ../SortieStandard/SortieStandard.pro /opt/Qt/5.12.3/gcc_64/mkspecs/lin
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -664,8 +688,29 @@ compiler_clean:
 
 ####### Compile
 
+bienvenue.o: ../SortieStandard/bienvenue.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bienvenue.o ../SortieStandard/bienvenue.cpp
+
+lecture.o: ../SortieStandard/lecture.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lecture.o ../SortieStandard/lecture.cpp
+
+lecturechainedecaracteres.o: ../SortieStandard/lecturechainedecaracteres.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lecturechainedecaracteres.o ../SortieStandard/lecturechainedecaracteres.cpp
+
 main.o: ../SortieStandard/main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SortieStandard/main.cpp
+
+manipulateurs.o: ../SortieStandard/manipulateurs.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o manipulateurs.o ../SortieStandard/manipulateurs.cpp
+
+manipulateursex.o: ../SortieStandard/manipulateursex.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o manipulateursex.o ../SortieStandard/manipulateursex.cpp
+
+medailles.o: ../SortieStandard/medailles.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o medailles.o ../SortieStandard/medailles.cpp
+
+reference.o: ../SortieStandard/reference.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reference.o ../SortieStandard/reference.cpp
 
 ####### Install
 
