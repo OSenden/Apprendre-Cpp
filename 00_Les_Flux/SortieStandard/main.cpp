@@ -108,4 +108,4 @@ int main(){
         cout<< "+" <<setfill('-') << setw(21) << "+" <<setfill('-') << setw(11) << "+" <<setfill('-') << setw(11) << "+" <<setfill('-') << setw(11) << "+" << endl;
     }
     return 0;
-}
+} 
