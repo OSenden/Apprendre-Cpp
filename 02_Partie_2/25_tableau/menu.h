@@ -6,6 +6,10 @@
 #include <iostream>
 #include <algorithm>
 
+enum erreurs
+{
+    FICHIER,
+};
 
 
 using namespace std;
@@ -22,11 +26,52 @@ private:
     int nbOptions; ///Contient le nombre d'options du Menu
     int longueurMax; ///Taille de la plus grande chaîne contenue dans le tableau
 
+
 public:
     ~Menu();
     Menu(const string _nom);
     int Afficher();
     static void AttendreAppuiTouche();
+
+    void Affecter(int _indice,int _valeur);
+    int &operator[](int _indice);
 };
+
+
+class ErreurFichier
+{
+
+private:
+
+    int codeErreur;
+    string message;
+
+public:
+
+    ErreurFichier(int _codeErreur, string _message);
+    int ObtenirCodeErreur() const;
+    string ObtenirDescription()const;
+};
+
+
+
+class ErreurIndice
+{
+
+private:
+
+    int codeErreur;
+    string message;
+
+public:
+
+    ErreurIndice(int _codeErreur, string _message);
+    int ObtenirCodeErreur()const;
+    string ObtenirDescription()const;
+
+};
+
+
+
 
 #endif // MENU_H

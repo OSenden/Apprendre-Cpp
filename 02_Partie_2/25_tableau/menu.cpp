@@ -7,8 +7,13 @@ Menu::Menu(const string _nom):nom(_nom), longueurMax(0)
 
     ifstream fichierMenu(_nom.c_str());          // ouvrir le fichier
     if(!fichierMenu .is_open()){             // Si il y a une erreur
-        cout << "Erreur lors de l'ouverture du fichier menu"<<endl;           //alors Afficher un message indiquant une erreur de lecture
+        //cout << "Erreur lors de l'ouverture du fichier menu"<<endl;           //alors Afficher un message indiquant une erreur de lecture
         nbOptions = 0;          //et mettre nbOptions à 0
+
+        options = nullptr;
+        ErreurFichier excep(FICHIER,"Erreur d'ouverture du fichier");
+        throw (excep);
+
     } else
     {
         int nbLignes = static_cast<int>(count(istreambuf_iterator<char>(fichierMenu),istreambuf_iterator<char>(),'\n'));
@@ -67,7 +72,7 @@ void Menu::AttendreAppuiTouche()
 {
 
     string uneChaine;
-    cout << endl << "Appuyer sur la Touche Entrée pour continuer..."; //Ce message s'affiche lorsqu'un choix correct se fait
+    cout << endl << "Appuyer sur la touche Entrée pour continuer..."; //Ce message s'affiche lorsqu'un choix correct se fait
     getline(cin,uneChaine);
     cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
     system("clear"); //Nettoie la zone
@@ -76,5 +81,22 @@ void Menu::AttendreAppuiTouche()
 
 Menu::~Menu()
 {
+    if(options!=nullptr)
     delete [] options;
+}
+
+ErreurFichier::ErreurFichier(int _codeErreur, string _message):  codeErreur(_codeErreur),
+    message(_message)
+{
+
+}
+
+int ErreurFichier::ObtenirCodeErreur()const
+{
+    return codeErreur;
+}
+
+string ErreurFichier::ObtenirDescription()const
+{
+    return message;
 }
