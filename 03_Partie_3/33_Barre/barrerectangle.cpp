@@ -19,3 +19,10 @@ double BarreRectangle::CalculerSection()
     double surface = largeur * hauteur;
     return surface;
 }
+
+double BarreRectangle::CalculerMasse()
+{
+    double surface = CalculerSection();
+    double masse = longueur * surface * densite;
+    return masse;
+}

@@ -11,7 +11,7 @@ public:
     Barre(string _ref, int _longueur,float _densite, string _nomAlliage);
     void AfficherCaracteristiques();
 
-private:
+protected:
 
     string ref;
     int longueur;

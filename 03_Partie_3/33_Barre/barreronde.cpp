@@ -10,12 +10,19 @@ BarreRonde::BarreRonde(string _ref, int _longueur, float _densite, string _nomAl
 
 
 {
-cout << "Construction de la barre terminée" << endl;
+cout << "Construction de la barre ronde terminée" << endl;
 
 }
 
 double BarreRonde::CalculerSection()
 {
-    double surface = M_PI * (diametre * diametre) /4;
+    double surface = M_PI * pow(diametre,2) /4;
     return surface;
+}
+
+double BarreRonde::CalculerMasse()
+{
+    double surface = CalculerSection();
+    double masse = longueur * surface * densite;
+    return masse;
 }

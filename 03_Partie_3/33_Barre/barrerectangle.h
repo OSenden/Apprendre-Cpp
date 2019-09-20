@@ -9,13 +9,15 @@ using namespace std;
 class BarreRectangle : public Barre
 {
 public:
-    BarreRectangle(string _ref, int _longueur, float densite, string _nomAlliage, int _largeur, int _hauteur);
+    BarreRectangle(string _ref, int _longueur, float _densite, string _nomAlliage, int _largeur, int _hauteur);
     double CalculerSection();
+    double CalculerMasse();
 
-private:
+protected:
     int largeur;
     int hauteur;
 
     double surface;
+    double masse;
 };
 #endif // BARRERECTANGLE_H

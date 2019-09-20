@@ -9,11 +9,15 @@ using namespace std;
 class BarreRonde : public Barre
 {
 public:
-    BarreRonde(string _ref, int _longueur, float densite, string _nomAlliage, double _diametre);
+    BarreRonde(string _ref, int _longueur, float _densite, string _nomAlliage, double _diametre);
     double CalculerSection();
+    double CalculerMasse();
 
-private:
+protected:
     double diametre;
+
+    double surface;
+    double masse;
 
 };
 
