@@ -1,0 +1,5 @@
+Deposer            [1]
+Retirer            [2]
+Consulter le solde [3]
+Calculer interets  [4]
+Quitter            [5]

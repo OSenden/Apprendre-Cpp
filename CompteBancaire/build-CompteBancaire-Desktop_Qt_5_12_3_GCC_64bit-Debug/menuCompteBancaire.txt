@@ -1,0 +1,4 @@
+Deposer            [1]
+Retirer            [2]
+Consulter le solde [3]
+Quitter            [4]
